@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Audio Player in JS</title>
+    <style>
+        body{
+            background: #f1e7e7;
+        }
+        .audio_player_cont{
+            position: absolute;
+            width: 450px;
+            height: 135px;
+            background:#f3ebdc;
+            box-shadow: 0 0 6px 2px #c7a8a8;
+            color: #003ba9;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .logo{
+            float: left;
+        }
+        .player{
+            float:right;
+            margin: 7px;
+        }
+        .song_title{
+            width: 300px;
+            padding: 5px 0 5px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .song-slider{
+            width: 300px;
+        }
+        .current-time{
+            float: left;
+            font-size: 10px;
+        }
+        .duration{
+            float: right;
+            font-size: 10px;
+        }
+        .controller{
+            clear: both;
+            display: table;
+        }
+        .volume-slider{
+            width: 90px;
+            margin-left: 5px;
+        }
+        .controller *{
+            vertical-align: middle;
+            margin-right: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio_player_cont">
+        <div class="logo">
+            <img src="images/audio-player.png" alt="audio_player_logo">
+        </div>
+        <div class="player">
+           <div class="song_title">My Song title will go here....My Song title will go here....</div>
+           <input type="range" class="song-slider" min="0" step="1" onchange="seekSong()">
+           <div>
+               <div class="current-time">00:00</div>
+               <div class="duration">00:00</div>
+           </div>
+           <div class="controller">
+               <img src="images/previous.png" width="30px" alt="previous song" onclick="previous()">
+               <img src="images/backward.png" width="30px" alt="song backward" onclick="backward()">
+               <img src="images/play.png" width="40px" alt="playOrpauseSong" onclick="playOrpause()">
+               <img src="images/forward.png" width="30px" alt="song forward" onclick="forward()">
+               <img src="images/next.png" width="30px" alt="next song" onclick="next()">
+               <img src="images/volume-down.png" alt="volume down" width="15px">
+               <input type="range" name="volume-slider" class="volume-slider">
+               <img src="images/volume-up.png" width="15px" alt="volume up">
+           </div>
+           <div class="next_song">
+               <b>Next Song :</b> Next song goes here.....
+           </div>
+       </div>
+    </div>
+</body>
+</html>
